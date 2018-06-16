@@ -4,6 +4,6 @@
   debug:
     var: metapackage
 - name: Ensure wn package is present
-  package: 
+  package:
     name: "{{ metapackage[ansible_os_family|lower][ansible_distribution_major_version]['name']}}"
     state: present
