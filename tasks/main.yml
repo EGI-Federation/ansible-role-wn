@@ -1,8 +1,5 @@
 ---
 # tasks file for ansible-wn-role
-- name: debug var
-  debug:
-    var: metapackage
 - name: Ensure wn package is present
   package:
     name: "{{ metapackage[ansible_os_family|lower][ansible_distribution_major_version]['name']}}"
