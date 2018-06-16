@@ -21,3 +21,53 @@ def test_packages(host, name, version):
     p = host.package(name)
     assert p.is_installed
     assert p.version.startswith(version)
+
+
+@pytest.mark.parametrize("name", [
+    "c-ares",
+    "cleanup-grid-accounts  ",
+    "cvmfs",
+    "dcache-srmclient",
+    "dcap",
+    "dcap-devel  ",
+    "dcap-libs  ",
+    "dcap-tunnel-gsi  ",
+    "dcap-tunnel-krb  ",
+    "dcap-tunnel-ssl  ",
+    "dcap-tunnel-telnet",
+    "dpm",
+    "libdpm.so.1()(64bit),  dpm-libs",
+    "dpm-devel",
+    "dpm-perl",
+    "dpm-python",
+    "fetch-crl",
+    "gfal2-all",
+    "gfal2-python",
+    "gfal2-util",
+    "gfalFS",
+    "gfal2-all",
+    "gfal2-doc",
+    "gfal2-devel",
+    "ginfo",
+    "lcg-info  ",
+    "lcg-ManageVOTag",
+    "lcg-tags",
+    "lcgdm-devel",
+    "globus-gass-copy-progs",
+    "globus-proxy-utils",
+    "glite-yaim-core",
+    "gridsite-libs",
+    "lcg-infosites  ",
+    "lfc  ",
+    "lfc-devel",
+    "lfc-perl",
+    "liblfc.so.1()(64bit), lfc-libs",
+    "openldap-clients",
+    "python-ldap  ",
+    "uberftp",
+    "voms-clients-java",
+    "voms-devel  ",
+    "xrootd-client "])
+def test_dependencies(host,name):
+    p=host.package(name)
+    assert p.is_installed
