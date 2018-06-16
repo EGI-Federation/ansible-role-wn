@@ -1,2 +1,9 @@
 ---
 # defaults file for ansible-wn-role
+metapackage:
+  redhat:
+    '6':
+      name: emi-wn
+    '7':
+      name: wn
+      

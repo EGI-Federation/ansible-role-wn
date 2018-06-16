@@ -22,7 +22,6 @@ def test_packages(host, name, version):
     assert p.is_installed
     assert p.version.startswith(version)
 
-
 @pytest.mark.parametrize("name", [
     "c-ares",
     "cleanup-grid-accounts  ",
