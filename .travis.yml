@@ -1,41 +1,37 @@
----
-# Travis template for an EGI-styled role
 language: python
 python:
-  - '2.7'
+- '2.7'
 sudo: required
 services:
-  - docker
+- docker
 env:
   global:
-    md_ignore: R1  # Which markdownlint rules to ignore
+    md_ignore: R1
   matrix:
-    - SCENARIO='default'
-before_install:
+  - SCENARIO='default'
+before_install: 
 install:
-  - pip install -r requirements.txt  # The packages necessary for running the tests.
+- pip install -r requirements.txt
 before_script:
-  - > # Lint all the markdown files
-      for file in `find . -maxdepth 2 -name "*.md"` ;  do
-      markdownlint --ignore $md_ignore $file ;
-      done
+- 'for file in `find . -maxdepth 2 -name "*.md"` ;  do markdownlint --ignore $md_ignore
+  $file ; done
+
+'
 script:
-  - molecule lint -s $SCENARIO
-  - molecule dependency -s $SCENARIO
-  - molecule syntax -s $SCENARIO
-  - molecule create -s $SCENARIO
-  - molecule converge -s $SCENARIO
-  - molecule verify -s $SCENARIO
-  - cd $TRAVIS_BUILD_DIR
-after_success:
-after_failure:
-before_deploy:
-deploy:
-after_deploy:
-after_script:
-# Add your notifications here.
-# Use travis encrypt to add api tokens.
+- molecule lint -s $SCENARIO
+- molecule dependency -s $SCENARIO
+- molecule syntax -s $SCENARIO
+- molecule create -s $SCENARIO
+- molecule converge -s $SCENARIO
+- molecule verify -s $SCENARIO
+- cd $TRAVIS_BUILD_DIR
+after_success: 
+after_failure: 
+before_deploy: 
+deploy: 
+after_deploy: 
+after_script: 
 notifications:
-  # slack:
-  #   secure:
-  webhooks: "https://galaxy.ansible.com/api/v1/notifications/"
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
+  slack:
+    secure: EV6OdjBScBWcSHZ4M+o0X9uNafREEu/2Yj2b/rmf2ATqgpPNOtBqW01cLWzDbyOh2x4GyYA8xukfhAGF4ppa2XVETvMTSc3IrXeMsNJamgOWbAo6mg2DIf7DubE3sYCLtx7OCw6KaBNG0U24noboB8ChxuhT4PpzmLilC/l/7EFEtYwkZ3NB5TGC9DgZpCbYj5INHYSTkSDDXz333+RBb+i1aMOkWPJrG/2ORMxqEER70V4JTGp9DNDZzykuppBiDU/mvEpAkuDxfMQufOKUeZGpdfadczrJFi8BXFJWf83ef1ioTSSN2fjoBCgrYcAll1018792Q6roQM1IM56A2FMikEnFBBws1GbjM/UYRZ2fl3mCrOMUtQI4WCyyNdjs/3QXviv9dHHWirvPfe1Eu29ARWJ4fyArsaPbV+py2rAqdbxuMBItPXnJU3CUXfyCcIgwsOwgy7ErJnHcZY/nxAV4j7FYCbub+/+QVlg6d1+iy1HIAPBQ0brxKK4D0sp9mg6qbTjAtLp7L8wAT/mVPBfoZksttDMirO95FbU7HAifkKpBlZFlUJV/1QdV6Sqf/pt70zuRwx/puYAWL4ah6rmA0bkpxgtnX3f2ft0vpQKjtoWF5QxhIOUDsL//ptz6c/5Og7hjYEUarkdlqRmG2LKcvIBHONLeMXrdH0EPOFo=
