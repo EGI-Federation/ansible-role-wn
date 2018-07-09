@@ -4,3 +4,5 @@
   package:
     name: "{{ metapackage[ansible_os_family|lower][ansible_distribution_major_version]['name']}}"
     state: present
+
+    # Add grid accounts
