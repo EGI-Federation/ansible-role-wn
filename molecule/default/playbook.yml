@@ -2,5 +2,6 @@
 - name: Converge
   hosts: all
   roles:
-    - {role: brucellino.umd, release: 4}
+    - {role: EGI-Foundation.umd, release: 4 }
+    - {role: EGI-Foundation.voms-client }
     - role: ansible-role-wn

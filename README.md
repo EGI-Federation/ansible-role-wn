@@ -16,6 +16,7 @@ None yet.
 This role uses the following roles as dependencies:
 
 - EGI-Foundation.umd
+- EGI-Foundation.voms-client
 
 ## Example Playbook
 
