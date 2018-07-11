@@ -1,4 +1,5 @@
-# Ansible Worker Node Provisioning role
+# Ansible Worker Node Provisioning role [![Build Status](https://travis-ci.org/EGI-Foundation/ansible-role-wn.svg?branch=master)](https://travis-ci.org/EGI-Foundation/ansible-role-wn)
+
 
 This is an Ansible role for the provisioning of a UMD worker node.
 It ensures that the relevant repositories are installed and configured.
