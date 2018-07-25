@@ -1,6 +1,4 @@
 ---
 # tasks file for ansible-wn-role
 - import_tasks: install.yml
-
-
-    # Add grid accounts
+# Add grid accounts
