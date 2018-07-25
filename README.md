@@ -1,8 +1,8 @@
-# Ansible Worker Node Provisioning role [![Build Status](https://travis-ci.org/EGI-Foundation/ansible-role-wn.svg?branch=master)](https://travis-ci.org/EGI-Foundation/ansible-role-wn)
+# Ansible Worker Node Provisioning role [![Build Status](https://travis-ci.org/EGI-Foundation/ansible-role-wn.svg?branch=master)](https://travis-ci.org/EGI-Foundation/ansible-role-wn) [![Maintainability](https://api.codeclimate.com/v1/badges/d6a249676a9d0a1894aa/maintainability)](https://codeclimate.com/github/EGI-Foundation/ansible-role-wn/maintainability)
 
 
 This is an Ansible role for the provisioning of a UMD worker node.
-It ensures that the relevant repositories are installed and configured.
+It ensures that the relevant repositories are installed and configured and that the worker-node metapackage is installed.
 
 ## Requirements
 
@@ -25,6 +25,7 @@ This role uses the following roles as dependencies:
     - hosts: worker-nodes
       roles:
          - { role: EGI-Foundation.umd, release: 4}
+         - { role: EGI-Foundation.voms-client }
          - { role: EGI-foundation.wn }
 ```
 
