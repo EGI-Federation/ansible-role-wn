@@ -6,9 +6,9 @@ driver:
 lint:
   name: yamllint
 platforms:
-  - name: centos7
+  - name: wn-centos7
     image: centos:7
-  - name: centos6
+  - name: wn-centos6
     image: centos:6
 provisioner:
   name: ansible
