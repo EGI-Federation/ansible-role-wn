@@ -1,6 +1,4 @@
 ---
 # tasks file for ansible-wn-role
-- name: Ensure wn package is present
-  package:
-    name: "{{ metapackage[ansible_os_family|lower][ansible_distribution_major_version]['name']}}"
-    state: present
+- import_tasks: install.yml
+# Add grid accounts

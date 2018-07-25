@@ -1,0 +1,12 @@
+---
+# package install tasks for WN
+- name: Ensure wn package is present
+  package:
+    name: "{{ metapackage[ansible_os_family|lower][ansible_distribution_major_version]['name']}}"
+    state: present
+
+- name: Ensure other packages are present
+  package:
+    name: "{{ item }}"
+    state: present
+  loop: "{{ prerequisites[ansible_os_family | lower ][ansible_distribution_major_version]}}"

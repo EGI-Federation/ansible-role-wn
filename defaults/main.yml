@@ -6,3 +6,12 @@ metapackage:
       name: emi-wn
     '7':
       name: wn
+
+prerequisites:
+  redhat:
+    '6':
+      - ntpdate
+      - ntp
+    '7':
+      - ntpdate
+      - ntp
