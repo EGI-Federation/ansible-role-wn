@@ -21,12 +21,15 @@ def packages(distro, release):
     return packages
 
 
-@pytest.mark.parametrize("pkg", packages("redhat","6"))
-def test_packages(host, pkg):
-    if host.system_info.distribution == 'redhat' and host.system_info.distribution.release.startswith(6):
+@pytest.mark.parametrize("pkg", packages("redhat", "6"))
+def test_packages6(host, pkg):
+    if (host.system_info.distribution == 'redhat' and
+            host.system_info.distribution.release.startswith(6)):
         assert host.package(pkg).is_installed
 
-@pytest.mark.parametrize("pkg", packages("redhat","7"))
-def test_packages(host, pkg):
-    if host.system_info.distribution == "redhat" and host.system_info.distribution.release.startswith(7):
+
+@pytest.mark.parametrize("pkg", packages("redhat", "7"))
+def test_packages7(host, pkg):
+    if (host.system_info.distribution == "redhat" and
+            host.system_info.distribution.release.startswith(7)):
         assert host.package(pkg).is_installed
