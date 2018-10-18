@@ -7,11 +7,16 @@ lint:
   name: yamllint
 platforms:
   - name: wn-centos7
-    image: centos:7
+    image: quay.io/egi/voms-client:centos7
   - name: wn-centos6
-    image: centos:6
+    image: quay.io/egi/voms-client:centos6
 provisioner:
   name: ansible
+  config_options:
+    defaults:
+      forks: 2
+    connection:
+      pipelining: true
   lint:
     name: ansible-lint
 scenario:
