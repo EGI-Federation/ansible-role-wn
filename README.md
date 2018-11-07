@@ -19,6 +19,7 @@ This role uses the following roles as dependencies:
 - EGI-Foundation.umd
 - EGI-Foundation.voms-client
 
+
 ## Example Playbook
 
 ```yaml
@@ -28,6 +29,9 @@ This role uses the following roles as dependencies:
          - { role: EGI-Foundation.voms-client }
          - { role: EGI-foundation.wn }
 ```
+
+If you are building the role in a Docker container, you can start from the image expressed by the role `EGI-Foundation.voms-client`: [quay.io/egi/voms-client](https://quay.io/repository/egi/voms-client)
+
 
 ## License
 

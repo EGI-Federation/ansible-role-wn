@@ -25,9 +25,11 @@ script:
   - molecule verify -s $SCENARIO
   - cd $TRAVIS_BUILD_DIR
 after_success:
-  - docker commit `docker ps |grep "centos:7" |awk {'print $1'}` quay.io/egi/wn
+  - docker commit wn-centos6 quay.io/egi/wn:centos6
+  - docker commit wn-centos7 quay.io/egi/wn:centos7
   - docker login -u="egi+packerbot" -p="$QUAY_PASSWORD" quay.io
-  - docker push quay.io/egi/wn
+  - docker push quay.io/egi/wn:centos7
+  - docker push quay.io/egi/wn:centos6
 after_failure:
 before_deploy:
 deploy:
