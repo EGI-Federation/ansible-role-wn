@@ -8,7 +8,7 @@ services:
 env:
   global:
     - md_ignore: R1
-    - secure: lybPFj+6L9iy5n7FAZY07jQ3Ni+kN8SsnQ3n47AjS3onfIT7/DHWcpu8dt2Lq3vXw1y+ezI/mONxOHyq9X0M08d28JXVIRNdzZ+FuNnw0bonD/F84ENVUxN+TNQ78q9vhp1HbnV14uf9mANGqNns08Qx5qO3FRqtdj4Httn9XBku6FWxPBWAKxNwpwNR0EWm+PBptzKsPrttpOPZyXB+hJvyc/9TkfLi2Dg1kO8M2W0lU+YF4RkHZcNY6nnf+m+jHeizpsXpmZ78lpplbkmvaJIfpyBig1QelV8e5z12l7AohB3FBwWfBbF8eT0nE1MC4MvhJj4r1Cy1jIdDJ4mlAj8wE7enz/nyAPmHAeYN3Rg+kj3/MuktvSW6CDZyLZ+QiqhZv4ZdfM6dDl3sTdPePSiPmr8Nk2RJXVEbKLGLo/IBX4lUifteGxtFLBewPa5eiKkK7LxGNHMzeJSpJvnwMAvtMJjlq7OWh0AmTPW6m1bHvY5OaMcD3Ycs0i/38SR6NZnNRCCLAsyp9Ur3KuB9+hfL73C3ZfQTzpcX9hIxew+sNuNPI25RWCQJg8GPajmGleKDOdTMbwvcrAUi8/awwW2bPjzeAL/acrhQRHNoDMQMjE8qPju7JPel5RNah4BYUTXSXw6u7YyCKHMYJiw7Sz0Rf6eL3sO1sLpBatyIk1Y=
+    - secure:
   matrix:
     - SCENARIO='default'
 before_install:
@@ -38,4 +38,4 @@ after_script:
 notifications:
   webhooks: https://galaxy.ansible.com/api/v1/notifications/
   slack:
-    secure: EV6OdjBScBWcSHZ4M+o0X9uNafREEu/2Yj2b/rmf2ATqgpPNOtBqW01cLWzDbyOh2x4GyYA8xukfhAGF4ppa2XVETvMTSc3IrXeMsNJamgOWbAo6mg2DIf7DubE3sYCLtx7OCw6KaBNG0U24noboB8ChxuhT4PpzmLilC/l/7EFEtYwkZ3NB5TGC9DgZpCbYj5INHYSTkSDDXz333+RBb+i1aMOkWPJrG/2ORMxqEER70V4JTGp9DNDZzykuppBiDU/mvEpAkuDxfMQufOKUeZGpdfadczrJFi8BXFJWf83ef1ioTSSN2fjoBCgrYcAll1018792Q6roQM1IM56A2FMikEnFBBws1GbjM/UYRZ2fl3mCrOMUtQI4WCyyNdjs/3QXviv9dHHWirvPfe1Eu29ARWJ4fyArsaPbV+py2rAqdbxuMBItPXnJU3CUXfyCcIgwsOwgy7ErJnHcZY/nxAV4j7FYCbub+/+QVlg6d1+iy1HIAPBQ0brxKK4D0sp9mg6qbTjAtLp7L8wAT/mVPBfoZksttDMirO95FbU7HAifkKpBlZFlUJV/1QdV6Sqf/pt70zuRwx/puYAWL4ah6rmA0bkpxgtnX3f2ft0vpQKjtoWF5QxhIOUDsL//ptz6c/5Og7hjYEUarkdlqRmG2LKcvIBHONLeMXrdH0EPOFo=
+    secure:
